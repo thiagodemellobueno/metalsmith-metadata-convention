@@ -1,10 +1,10 @@
 'use strict'
 
-var path = require('path')
-var async = require('async')
-var extend = require('extend')
+var path = require('path');
+var async = require('async');
+var extend = require('extend');
 
-module.exports = function () {
+var plugin =  function () {
   return function (files, metalsmith, done) {
     var metadata = metalsmith.metadata()
 
@@ -32,3 +32,5 @@ module.exports = function () {
     async.forEachOf(files, processFile, done)
   }
 }
+
+module.exports = plugin;
